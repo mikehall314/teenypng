@@ -1,0 +1,45 @@
+{
+  "name": "tinypng",
+  "version": "0.1.0",
+  "description": "Compress PNG images with TinyPNG.org",
+  "license": "MIT",
+  "repository": "https://github.com/mikehall314/tinypng",
+  "contributors": [
+    "Mike Hall <mikehall314@gmail.com>"
+  ],
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "main": "lib/tinypng.js",
+  "scripts": {
+    "test": "nodeunit tests"
+  },
+  "files": [
+    "bin",
+    "lib"
+  ],
+  "bugs": {
+    "url": "https://github.com/mikehall314/tinypng/issues"
+  },
+  "bin": {
+    "tinypng": "bin/tinypng.js"
+  },
+  "keywords": [
+    "tinypng",
+    "pngcrush",
+    "optimize",
+    "png",
+    "shrink"
+  ],
+  "dependencies": {
+    "chalk": "~0.4.0",
+    "filesize": "~2.0.3",
+    "glob": "~3.2.9",
+    "lodash": "~2.4.1",
+    "nopt": "~2.2.0"
+  },
+  "devDependencies": {
+    "nodeunit": "^0.8.6",
+    "prompt": "^0.2.12"
+  }
+}
