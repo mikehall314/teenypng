@@ -3,7 +3,7 @@
 
 "use strict";
 
-var fs, path, chalk, filesize, nopt, glob, lodash, files, args, tinypng;
+var fs, path, chalk, filesize, nopt, glob, lodash, files, args, crushpng;
 
 // Require built-in modules
 path = require("path");
@@ -22,12 +22,12 @@ lodash = require("lodash");
  * Display the help section
  */
 function die() {
-    console.warn("Usage: tinypng --apikey <apikey> <files> ...", "\n");
+    console.warn("Usage:", path.basename(process.argv[1]), "--apikey <apikey> <files> ...", "\n");
     process.exit(1);
 }
 
 /**
- * Handle the response form tinypng
+ * Handle the response form TinyPNG
  */
 function replyHandler(err, result) {
 
@@ -61,7 +61,7 @@ function replyHandler(err, result) {
     result.input.size = filesize(result.input.size);
     result.output.size = filesize(result.output.size);
 
-    // If the ratio is >= 1, then the file was not reduced by tinypng and so there is no point in overwriting it
+    // If the ratio is >= 1, then the file was not reduced and so there is no point in overwriting it
     if (result.output.ratio >= 1) {
         message = ["-", chalk.green("✓"), chalk.grey(result.input.name), result.input.size, "(Already optimized)"];
         console.log(message.join(" "));
@@ -101,8 +101,8 @@ files = lodash.flatten(args.argv.remain, false, function (file) {
 });
 
 // Loop over the file list and optimize each file
-tinypng = require("../lib/tinypng.js");
+crushpng = require("../lib/crushpng.js");
 lodash.unique(files).forEach(function (file) {
     file = path.resolve(process.cwd(), file);
-    tinypng(file, { "apikey": args.apikey }, replyHandler);
+    crushpng(file, { "apikey": args.apikey }, replyHandler);
 });

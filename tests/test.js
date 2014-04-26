@@ -3,12 +3,12 @@
 
 "use strict";
 
-var settings, prompt, fs, tinypng, lodash;
+var settings, prompt, fs, crushpng, lodash;
 
 prompt  = require("prompt");
 fs      = require("fs");
 lodash  = require("lodash");
-tinypng = require("../lib/tinypng.js");
+crushpng = require("../lib/crushpng.js");
 
 module.exports.test = {
 
@@ -37,7 +37,7 @@ module.exports.test = {
 
         test.expect(1);
 
-        tinypng(testFile, settings, function (err, stats) {
+        crushpng(testFile, settings, function (err, stats) {
 
             var fileIsReduced;
 

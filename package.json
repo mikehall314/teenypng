@@ -1,16 +1,16 @@
 {
-  "name": "tinypng",
+  "name": "crushpng",
   "version": "0.1.0",
-  "description": "Compress PNG images with TinyPNG.org",
+  "description": "Crush PNG images with TinyPNG.org",
   "license": "MIT",
-  "repository": "https://github.com/mikehall314/tinypng",
+  "repository": "https://github.com/mikehall314/crushpng",
   "contributors": [
     "Mike Hall <mikehall314@gmail.com>"
   ],
   "engines": {
     "node": ">=0.10.0"
   },
-  "main": "lib/tinypng.js",
+  "main": "lib/crushpng.js",
   "scripts": {
     "test": "nodeunit tests"
   },
@@ -19,14 +19,14 @@
     "lib"
   ],
   "bugs": {
-    "url": "https://github.com/mikehall314/tinypng/issues"
+    "url": "https://github.com/mikehall314/crushpng/issues"
   },
   "bin": {
-    "tinypng": "bin/tinypng.js"
+    "crushpng": "bin/crushpng.js"
   },
   "keywords": [
     "tinypng",
-    "pngcrush",
+    "crushpng",
     "optimize",
     "png",
     "shrink"
