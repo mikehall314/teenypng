@@ -70,7 +70,7 @@ crushpng("image.png", settings, function (err, crushed) {
 ```
 
 ### Tests
-
+Test with nodeunit
 ```bash
 $ npm test
 ```
