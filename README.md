@@ -67,3 +67,9 @@ crushpng("image.png", settings, function (err, crushed) {
     //     }
     // }
 });
+
+### Tests
+
+```bash
+$ npm test
+```
