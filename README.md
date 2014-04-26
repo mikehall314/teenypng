@@ -67,6 +67,7 @@ crushpng("image.png", settings, function (err, crushed) {
     //     }
     // }
 });
+```
 
 ### Tests
 
