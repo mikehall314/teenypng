@@ -46,8 +46,15 @@ crushpng("image.png", { "apikey": "XXXXXXXXXX" }, function (err, crushed) {
 ```js
 "use strict";
 
-var crushpng = require("crushpng");
-crushpng("image.png", { "apikey": "XXXXXXXXXX", "onlyStats": true }, function (err, crushed) {
+var crushpng, settings;
+
+crushpng = require("crushpng");
+settings = {
+    "apikey": "XXXXXXXXXX",
+    "onlyStats": true
+};
+
+crushpng("image.png", settings, function (err, crushed) {
     // crushed = {
     //     "input": {
     //          "size": 207565,
