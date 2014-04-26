@@ -3,7 +3,7 @@
 
 "use strict";
 
-var settings, prompt, fs, crushpng, lodash;
+var defaults, prompt, fs, crushpng, lodash;
 
 prompt  = require("prompt");
 fs      = require("fs");
@@ -14,7 +14,12 @@ module.exports.test = {
 
     "setUp": function (next) {
 
-        prompt.start().get({
+        if (defaults) {
+            return next();
+        }
+
+        prompt.start();
+        prompt.get({
             name: "apikey",
             description: 'Enter your TinyPNG API Key',
             type: 'string',
@@ -26,7 +31,7 @@ module.exports.test = {
             }
 
             // Merge user data with defaults to make
-            settings = lodash.extend({}, result, {"onlyStats": true});
+            defaults = result;
             next();
         });
     },
@@ -35,21 +40,35 @@ module.exports.test = {
 
         var testFile = "./tests/image.png";
 
-        test.expect(1);
+        test.expect(2);
 
-        crushpng(testFile, settings, function (err, stats) {
+        crushpng(testFile, defaults, function (err, crushed) {
 
             var fileIsReduced;
 
-            if (err) {
-                console.error("Failed to reduce file, got error code:", err);
-                test.done();
-                return;
-            }
+            test.ifError(err);
 
-            // Did it work?
-            fileIsReduced = stats.output.ratio < 1;
+            fileIsReduced = crushed.output.ratio < 1;
+
             test.ok(fileIsReduced);
+            test.done();
+        });
+    },
+
+    "onlyStats should not download file": function (test) {
+
+        var settings, testFile;
+
+        testFile = "./tests/image.png";
+        settings = lodash.extend({}, defaults, { "onlyStats": true });
+
+        test.expect(2);
+
+        crushpng(testFile, settings, function (err, stats) {
+
+            test.ifError(err);
+
+            test.ok(!stats.image);
             test.done();
         });
     }
