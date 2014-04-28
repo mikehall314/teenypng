@@ -3,7 +3,7 @@
 
 "use strict";
 
-var fs, path, chalk, filesize, nopt, glob, lodash, files, args, crushpng;
+var fs, path, chalk, filesize, nopt, glob, lodash, files, args, teenypng;
 
 // Require built-in modules
 path = require("path");
@@ -101,8 +101,8 @@ files = lodash.flatten(args.argv.remain, false, function (file) {
 });
 
 // Loop over the file list and optimize each file
-crushpng = require("../lib/crushpng.js");
+teenypng = require("../lib/teenypng.js");
 lodash.unique(files).forEach(function (file) {
     file = path.resolve(process.cwd(), file);
-    crushpng(file, { "apikey": args.apikey }, replyHandler);
+    teenypng(file, { "apikey": args.apikey }, replyHandler);
 });

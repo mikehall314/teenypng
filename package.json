@@ -1,16 +1,16 @@
 {
-  "name": "crushpng",
+  "name": "teenypng",
   "version": "0.1.0",
-  "description": "Crush PNG images with TinyPNG.org",
+  "description": "Optimize PNG images with TinyPNG.org",
   "license": "MIT",
-  "repository": "https://github.com/mikehall314/crushpng",
+  "repository": "https://github.com/mikehall314/teenypng",
   "contributors": [
     "Mike Hall <mikehall314@gmail.com>"
   ],
   "engines": {
     "node": ">=0.10.0"
   },
-  "main": "lib/crushpng.js",
+  "main": "lib/teenypng.js",
   "scripts": {
     "test": "nodeunit tests"
   },
@@ -19,17 +19,18 @@
     "lib"
   ],
   "bugs": {
-    "url": "https://github.com/mikehall314/crushpng/issues"
+    "url": "https://github.com/mikehall314/teenypng/issues"
   },
   "bin": {
-    "crushpng": "bin/crushpng.js"
+    "teenypng": "bin/teenypng.js"
   },
   "keywords": [
     "tinypng",
-    "crushpng",
-    "optimize",
+    "teenypng",
     "png",
-    "shrink"
+    "optimize",
+    "shrink",
+    "minify"
   ],
   "dependencies": {
     "chalk": "~0.4.0",

@@ -3,12 +3,12 @@
 
 "use strict";
 
-var defaults, prompt, fs, crushpng, lodash;
+var defaults, prompt, fs, teenypng, lodash;
 
 prompt  = require("prompt");
 fs      = require("fs");
 lodash  = require("lodash");
-crushpng = require("../lib/crushpng.js");
+teenypng = require("../lib/teenypng.js");
 
 module.exports.test = {
 
@@ -42,13 +42,13 @@ module.exports.test = {
 
         test.expect(2);
 
-        crushpng(testFile, defaults, function (err, crushed) {
+        teenypng(testFile, defaults, function (err, optimized) {
 
             var fileIsReduced;
 
             test.ifError(err);
 
-            fileIsReduced = crushed.output.ratio < 1;
+            fileIsReduced = optimized.output.ratio < 1;
 
             test.ok(fileIsReduced);
             test.done();
@@ -64,7 +64,7 @@ module.exports.test = {
 
         test.expect(2);
 
-        crushpng(testFile, settings, function (err, stats) {
+        teenypng(testFile, settings, function (err, stats) {
 
             test.ifError(err);
 
