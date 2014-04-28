@@ -1,6 +1,6 @@
 # teenypng
 
-Optimize PNG images with [TinyPNG.org](https://tinypng.org/).
+Optimize PNG images with [TinyPNG](https://tinypng.com/).
 
 ## Command Line
 
@@ -40,7 +40,7 @@ teenypng("image.png", { "apikey": "XXXXXXXXXX" }, function (err, optimized) {
 
 ### Settings
 
-* `apikey`: Your API key from TinyPNG.org (required)
+* `apikey`: Your API key from tinypng.com (required)
 * `onlyStats`: Do not download the optimized file (optional, default: false)
 
 ```js

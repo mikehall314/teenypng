@@ -1,7 +1,7 @@
 {
   "name": "teenypng",
-  "version": "0.1.0",
-  "description": "Optimize PNG images with TinyPNG.org",
+  "version": "0.1.1",
+  "description": "Optimize PNG images with TinyPNG",
   "license": "MIT",
   "repository": "https://github.com/mikehall314/teenypng",
   "contributors": [
