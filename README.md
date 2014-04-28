@@ -16,7 +16,7 @@ $ teenypng images/*.png --apikey XXXXXXXXXX
 ### Install
 ```bash
 $ npm install --save-dev teenypng
-````
+```
 
 ### Use
 ```js
