@@ -36,9 +36,28 @@ module.exports.test = {
         });
     },
 
-    "should reduce filesize": function (test) {
+    "should reduce PNG filesize": function (test) {
 
         var testFile = "./tests/image.png";
+
+        test.expect(2);
+
+        teenypng(testFile, defaults, function (err, optimized) {
+
+            var fileIsReduced;
+
+            test.ifError(err);
+
+            fileIsReduced = optimized.output.ratio < 1;
+
+            test.ok(fileIsReduced);
+            test.done();
+        });
+    },
+
+    "should reduce JPG filesize": function (test) {
+
+        var testFile = "./tests/image.jpg";
 
         test.expect(2);
 
