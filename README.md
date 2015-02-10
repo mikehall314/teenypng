@@ -1,6 +1,6 @@
 # teenypng
 
-Optimize PNG images with [TinyPNG](https://tinypng.com/).
+Optimize PNG + JPEG images with [TinyPNG](https://tinypng.com/).
 
 ## Command Line
 
